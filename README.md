@@ -1,6 +1,6 @@
 ## Intro
 
-This is a very very simple #blue API client.
+This is a very very simple [#blue](http://hashblue.com) API client.
 
 ## Configuration
 
@@ -10,4 +10,4 @@ This is a very very simple #blue API client.
 
 ## Use
 
-Run server.rb (`ruby server.rb`) and visit http://localhost:4567 in your browser.
+Run the server (`ruby server.rb`) and visit http://localhost:4567 in your browser.
