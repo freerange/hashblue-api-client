@@ -1,0 +1,11 @@
+--- 
+:client: 
+  :redirect_uri: http://localhost:4567/oauth_callback
+  :identifier: CLIENT_IDENTIFIER
+  :secret: CLIENT_SECRET
+  # Scope is optional - See https://api.hashblue.com/doc/Authorization-Scopes
+  :scope: messages-tagged:#todo
+:server: 
+  :api_uri: https://api.hashblue.com
+  :oauth_authorize_uri: https://hashblue.com/oauth/authorize
+  :oauth_access_token_uri: https://hashblue.com/oauth/access_token
