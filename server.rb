@@ -41,7 +41,7 @@ def get_access_token(oauth_code)
   
   connection = Net::HTTP.new(uri.host, uri.port)
   connection.set_debug_output $stdout if NET_HTTP_DEBUG
-  connection.use_ssl = true
+  connection.use_ssl = (uri.scheme == 'https')
   request    = Net::HTTP::Post.new(uri.path)
   request.set_form_data params
   response   = connection.start { |http| http.request(request) }
@@ -51,7 +51,7 @@ end
 def api_request(resource, access_token)
   uri = URI.parse(File.join(CONFIG[:server][:api_uri], resource))
   connection = Net::HTTP.new(uri.host, uri.port)
-  connection.use_ssl = true
+  connection.use_ssl = (uri.scheme == 'https')
   connection.set_debug_output $stdout if NET_HTTP_DEBUG
   request = Net::HTTP::Get.new(uri.path, 'Authorization' => ['OAuth', access_token].join(' '))
   response = connection.start { |http| http.request(request) }
